@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html {% if page.lang %}lang="{{ page.lang }}"{% endif %}>
 <head>
     <meta charset="utf-8">
+    {% if page.title_override %}
+    <title>{{ page.title_override }}</title>
+    {% else %}
     <title>{{ page.title }} &#187; {{site.title }}</title>
+    {% endif %}
     {% if page.description %}
     <meta name="description" content="{{ page.description }}">
     {% endif %}
     <meta name="author" content="{{ site.author.name }}">
+
+    {% if page.lang %}
+    {% else %}
+    <meta name="robots" content="noindex, follow">
+    {% endif %}
 
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,11 +45,12 @@
       <link rel="apple-touch-icon" sizes="114x114" href="{{ ASSET_PATH }}/images/apple-touch-icon-114x114.png">
     -->
 
-    <!-- atom & rss feed -->
+    <!-- atom & rss feed
     <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate"
           title="Sitewide ATOM Feed">
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate"
           title="Sitewide RSS Feed">
+    -->
 </head>
 
 <body>
@@ -60,17 +70,40 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="#foodAndDrinks">Food + Drinks</a></li>
-                <li><a href="#takeaway">Take Away</a></li>
+                <li><a href="{% if page.lang %}/{{ page.lang }}/food{% else %}#{% endif %}">
+                    {% case page.lang %}
+                    {% when 'nl' %}Eten + Drinken
+                    {% when 'fr' %}Manger + Boisson
+                    {% else %}Food + Drinks
+                    {% endcase %}</a></li>
+                <li><a href="{% if page.lang %}/{{ page.lang }}/food#takeaway{% else %}#{% endif %}">
+                    {% case page.lang %}
+                    {% when 'nl' %}Afhalen
+                    {% when 'fr' %}Plat à emporter
+                    {% else %}Take Away
+                    {% endcase %}
+                </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#sleep">Sleep</a></li>
-                <li><a href="#events">Events + Meetings</a></li>
+                <li><a href="{% if page.lang %}/{{ page.lang }}/lodgement{% else %}#{% endif %}">
+                    {% case page.lang %}
+                    {% when 'nl' %}Logies
+                    {% when 'fr' %}Logement
+                    {% else %}Lodgement
+                    {% endcase %}
+                </a></li>
+                <li><a href="{% if page.lang %}/{{ page.lang }}/groups{% else %}#{% endif %}">
+                    {% case page.lang %}
+                    {% when 'nl' %}Evenementen + Groepen
+                    {% when 'fr' %}&Eacute;v&eacute;nement + GROUPE
+                    {% else %}Events + Groups
+                    {% endcase %}
+                </a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
         <h1 class="logo hidden-xs">
-            <a href="/" title="l'Entrepot du Congo">
+            <a href="/{% if page.lang %}{{ page.lang }}{% endif %}" title="l'Entrepot du Congo">
                 <img src="{{ ASSET_PATH }}/images/entrepot-115.png" alt="l'Entrepot du Congo" width="95" height="141">
             </a>
         </h1>
@@ -91,19 +124,19 @@
         <footer>
             <div class="row">
                 <div class="col-md-2">
-                    <a href="/" title="l'Entrepot du Congo">
+                    <a href="{% if page.lang %}/{{ page.lang }}{% endif %}/" title="l'Entrepot du Congo">
                         <img src="{{ ASSET_PATH }}/images/entrepot-200.png" alt="l'Entrepot du Congo" width="135"
                              height="200">
                     </a>
                 </div>
                 <div class="col-md-3">
                     <h4>l'Entrep&#244;t du Congo</h4>
-                    <p>
+                    <address>
                         Vlaamsekaai 42<br>
-                        2000 Antwerp<br>
-                    </p>
+                        2000 Antwerpen<br>
+                    </address>
                     <p>
-                        +32 475 52 82 15<br>
+                        <a href="tel:+32475528215">+32 475 52 82 15</a><br>
                         <a href="mailto:info@entrepotducongo.com">info@entrepotducongo.com</a><br>
                         <a href="http://entrepotducongo.com">entrepotducongo.com</a>
                     </p>
@@ -113,10 +146,18 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x47c3f6ecd7a7cdf9%3A0x277082395f63157a!2sL&#39;Entrepot+du+Congo%2C+Vlaamsekaai+42%2C+2000+Antwerpen!5e0!3m2!1sen!2sbe!4v1388092112954" width="100%" height="200" frameborder="0" style="border:0"></iframe>
                 </div>
                 <div class="col-md-2">
-
+                    <form>
+                        <select class="form-control language-select">
+                            <option {% if page.lang == 'en' %}selected{% endif %} value="en">English</option>
+                            <option {% if page.lang == 'nl' %}selected{% endif %} value="nl">Nederlands</option>
+                            <!--<option {% if page.lang == 'fr' %}selected{% endif %} value="fr">fran&ccedil;ais</option>-->
+                        </select>
+                    </form>
+                    <hr />
                     <a class="btn btn-facebook btn-block" href="https://www.facebook.com/entrepotducongo"><span class="fa fa-facebook"></span> | Facebook</a>
                     <a class="btn btn-google-plus btn-block" href="https://plus.google.com/101729553693648953944/"><span class="fa fa-google-plus"></span> | Google Plus</a>
                     <a class="btn btn-success btn-block" href="http://www.tripadvisor.com/Restaurant_Review-g188636-d1018023-Reviews-L_entrepot_du_congo-Antwerp_Antwerp_Province.html"><span class="fa fa-tripadvisor"></span> TripAdvisor</a>
+
 
 
 
@@ -138,6 +179,23 @@
 <script type="text/javascript">
     $(function () {
         $(".popup").popupwindow();
+
+        var changeLang = function(language) {
+            var permalink = "{{page.permalink}}"
+
+            {% if page.lang %}
+            window.location = permalink.replace("\/{{page.lang}}", "/" + language).replace("/index.html", "")
+            {% else %}
+            window.location = "/" + language + permalink.replace("/index.html", "")
+            {% endif %}
+        }
+        $("select.language-select").change(function (e) {
+            changeLang($(this).val())
+        })
+
+        $(".language-select button").click(function (e) {
+            changeLang($(this).attr("data-language"))
+        })
     });
 </script>
 
