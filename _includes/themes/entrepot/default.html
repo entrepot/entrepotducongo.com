@@ -51,6 +51,7 @@
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate"
           title="Sitewide RSS Feed">
     -->
+    {% include custom/analytics %}
 </head>
 
 <body>
@@ -118,59 +119,8 @@
         </div>
     </div>
 </div>
-<div id="footer">
-    <div class="container">
-        <hr>
-        <footer>
-            <div class="row">
-                <div class="col-md-2">
-                    <a href="{% if page.lang %}/{{ page.lang }}{% endif %}/" title="l'Entrepot du Congo">
-                        <img src="{{ ASSET_PATH }}/images/entrepot-200.png" alt="l'Entrepot du Congo" width="135"
-                             height="200">
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <h4>l'Entrep&#244;t du Congo</h4>
-                    <address>
-                        Vlaamsekaai 42<br>
-                        2000 Antwerpen<br>
-                    </address>
-                    <p>
-                        <a href="tel:+32475528215">+32 475 52 82 15</a><br>
-                        <a href="mailto:info@entrepotducongo.com">info@entrepotducongo.com</a><br>
-                        <a href="http://entrepotducongo.com">entrepotducongo.com</a>
-                    </p>
 
-                </div>
-                <div class="col-md-5">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x47c3f6ecd7a7cdf9%3A0x277082395f63157a!2sL&#39;Entrepot+du+Congo%2C+Vlaamsekaai+42%2C+2000+Antwerpen!5e0!3m2!1sen!2sbe!4v1388092112954" width="100%" height="200" frameborder="0" style="border:0"></iframe>
-                </div>
-                <div class="col-md-2">
-                    <form>
-                        <select class="form-control language-select">
-                            <option {% if page.lang == 'en' %}selected{% endif %} value="en">English</option>
-                            <option {% if page.lang == 'nl' %}selected{% endif %} value="nl">Nederlands</option>
-                            <!--<option {% if page.lang == 'fr' %}selected{% endif %} value="fr">fran&ccedil;ais</option>-->
-                        </select>
-                    </form>
-                    <hr />
-                    <a class="btn btn-facebook btn-block" href="https://www.facebook.com/entrepotducongo"><span class="fa fa-facebook"></span> | Facebook</a>
-                    <a class="btn btn-google-plus btn-block" href="https://plus.google.com/101729553693648953944/"><span class="fa fa-google-plus"></span> | Google Plus</a>
-                    <a class="btn btn-success btn-block" href="http://www.tripadvisor.com/Restaurant_Review-g188636-d1018023-Reviews-L_entrepot_du_congo-Antwerp_Antwerp_Province.html"><span class="fa fa-tripadvisor"></span> TripAdvisor</a>
-
-
-
-
-                </div>
-            </div>
-
-        </footer>
-    </div>
-
-</div>
-
-
-{% include JB/analytics %}
+{% include custom/footer %}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js"></script>
