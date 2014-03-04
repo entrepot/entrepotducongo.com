@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-md-2">
                     <a href="{% if page.lang %}/{{ page.lang }}{% endif %}/" title="l'Entrepot du Congo">
-                        <img src="{{ ASSET_PATH }}/images/entrepot-200.png" alt="l'Entrepot du Congo" width="135"
-                             height="200">
+                        <img src="{{ ASSET_PATH }}/images/entrepot-200.png" alt="l'Entrepot du Congo" width="158"
+                             height="240">
                     </a>
                 </div>
                 <div class="col-md-3">
@@ -18,12 +18,18 @@
                     <p>
                         <a href="tel:+32475528215">+32 475 52 82 15</a><br>
                         <a href="mailto:info@entrepotducongo.com">info@entrepotducongo.com</a><br>
-                        <a href="http://entrepotducongo.com">entrepotducongo.com</a>
+                        <a href="http://entrepotducongo.com{% if page.lang %}/{{ page.lang }}{% endif %}">entrepotducongo.com</a>
                     </p>
+
+                    {% case page.lang %}
+                    {% when 'nl' %}<table class="table"><tr><td>zon - don</td><td>8:00 tot 1:00</td></tr><tr><td>vri - zat</td><td>8:00 tot 2:00</td></tr></table>
+                    {% when 'fr' %}Plat à emporter
+                    {% else %}<table class="table"><tr><td>Sun -Thu</td><td>8:00 till 1:00</td></tr><tr><td>Fri - Sat</td><td>8:00 till 2:00</td></tr></table>
+                    {% endcase %}
 
                 </div>
                 <div class="col-md-5">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x47c3f6ecd7a7cdf9%3A0x277082395f63157a!2sL&#39;Entrepot+du+Congo%2C+Vlaamsekaai+42%2C+2000+Antwerpen!5e0!3m2!1sen!2sbe!4v1388092112954" width="100%" height="200" frameborder="0" style="border:0"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x47c3f6ecd7a7cdf9%3A0x277082395f63157a!2sL&#39;Entrepot+du+Congo%2C+Vlaamsekaai+42%2C+2000+Antwerpen!5e0!3m2!1sen!2sbe!4v1388092112954" width="100%" height="240" frameborder="0" style="border:0"></iframe>
                 </div>
                 <div class="col-md-2">
                     <form>
