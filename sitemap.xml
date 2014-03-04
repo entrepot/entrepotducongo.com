@@ -1,0 +1,25 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    {% for post in site.posts %}
+    <url>
+        <loc>{{ site.production_url }}{{ post.url | remove: 'index.html' }}</loc>
+    </url>
+    {% endfor %}
+    {% for page in site.pages %}
+    {% if page.url != '/404.html' %}{% if page.layout != nil %}{% if page.layout != 'feed' %}{% if page.layout != 'redirect' %}
+    <url>
+        <loc>{{ site.production_url }}{{ page.url | remove: 'index.html' }}</loc>
+        <xhtml:link
+                rel="alternate"
+                hreflang="nl"
+                href="{{ site.production_url }}/nl{{ page.url | remove: 'index.html' | remove: '/nl' | remove: '/en' }}" />
+        <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="{{ site.production_url }}/en{{ page.url | remove: 'index.html' | remove: '/nl' | remove: '/en' }}" />
+    </url>
+    {% endif %}{% endif %}{% endif %}{% endif %}
+    {% endfor %}
+</urlset>

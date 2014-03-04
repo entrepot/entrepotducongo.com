@@ -1,1 +1,6 @@
+---
+---
 User-agent: *
+Disallow: /menu.pdf
+
+Sitemap: {{ site.production_url }}/sitemap.xml

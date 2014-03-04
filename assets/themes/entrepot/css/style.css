@@ -1,3 +1,5 @@
+
+
 /* posts index */
 .post > h3.title {
   position: relative;
@@ -102,7 +104,14 @@
 html,
 body {
     height: 100%;
-    /* The html and body elements cannot have any padding or margin. */
+    background-image: url(../images/bg.png);
+    background-attachment: fixed;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+}
+
+.navbar-default {
+    background-color: transparent;
 }
 
 .btn-block {
@@ -111,4 +120,12 @@ body {
 
 iframe, object, embed{
     max-width: 100%;
+}
+
+blockquote p {
+    font-size: 13.5px;
+}
+
+.table thead td {
+    font-weight: bold;
 }
