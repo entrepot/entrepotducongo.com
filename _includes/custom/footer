@@ -29,7 +29,7 @@
 
                 </div>
                 <div class="col-md-5">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x47c3f6ecd7a7cdf9%3A0x277082395f63157a!2sL&#39;Entrepot+du+Congo%2C+Vlaamsekaai+42%2C+2000+Antwerpen!5e0!3m2!1sen!2sbe!4v1388092112954" width="100%" height="240" frameborder="0" style="border:0"></iframe>
+                    <iframe width="100%" height="240" frameborder="0" src="https://www.bing.com/maps/embed/viewer.aspx?v=3&cp=51.209634~4.390597&lvl=17&w=325&h=280&sty=r&typ=s&pp=l%26%2339%3BEntrep%26%23244%3Bt%20du%20Congo~Vlaamsekaai%2042%2C%202000%20Antwerpen%26%2360%3Bbr%26%2347%3B%26%2362%3B%26%2343%3B32475528215~51.209560~4.390583&ps=55&dir=0&mkt=nl-be&src=O365&form=BMEMJS"></iframe>
                 </div>
                 <div class="col-md-2">
                     <form>
