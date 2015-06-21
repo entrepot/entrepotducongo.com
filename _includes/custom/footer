@@ -29,7 +29,7 @@
 
                 </div>
                 <div class="col-md-5">
-                    <iframe width="100%" height="240" frameborder="0" src="https://www.bing.com/maps/embed/viewer.aspx?v=3&cp=51.209634~4.390597&lvl=17&w=325&h=280&sty=r&typ=s&pp=l%26%2339%3BEntrep%26%23244%3Bt%20du%20Congo~Vlaamsekaai%2042%2C%202000%20Antwerpen%26%2360%3Bbr%26%2347%3B%26%2362%3B%26%2343%3B32475528215~51.209560~4.390583&ps=55&dir=0&mkt=nl-be&src=O365&form=BMEMJS"></iframe>
+                    <iframe width="100%" height="240" frameborder="0" src="https://www.bing.com/maps/embed/viewer.aspx?v=3&cp=51.209634~4.390597&lvl=17&h=240&sty=r&typ=s&pp=l%26%2339%3BEntrep%26%23244%3Bt%20du%20Congo~Vlaamsekaai%2042%2C%202000%20Antwerpen%26%2360%3Bbr%26%2347%3B%26%2362%3B%26%2343%3B32475528215~51.209560~4.390583&ps=55&dir=0&mkt=nl-be&src=O365&form=BMEMJS"></iframe>
                 </div>
                 <div class="col-md-2">
                     <form>
