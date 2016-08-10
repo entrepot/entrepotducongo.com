@@ -22,9 +22,9 @@
                     </p>
 
                     {% case page.lang %}
-                    {% when 'nl' %}<table class="table"><tr><td>zon - don</td><td>8:00 tot 1:00</td></tr><tr><td>vri - zat</td><td>8:00 tot 2:00</td></tr></table>
+                    {% when 'nl' %}<table class="table"><tr><td>alle dagen</td><td>8:00 tot 0:00</td></tr><tr><td>keuken</td><td>8:00 tot 22:00</td></tr></table>
                     {% when 'fr' %}Plat à emporter
-                    {% else %}<table class="table"><tr><td>Sun -Thu</td><td>8:00 till 1:00</td></tr><tr><td>Fri - Sat</td><td>8:00 till 2:00</td></tr></table>
+                    {% else %}<table class="table"><tr><td>Every day</td><td>8:00 till 0:00</td></tr><tr><td>Kitchen</td><td>8:00 till 22:00</td></tr></table>
                     {% endcase %}
 
                 </div>
