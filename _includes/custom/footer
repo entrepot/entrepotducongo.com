@@ -39,8 +39,8 @@
                         </select>
                     </form>
                     <hr />
-                    <a class="btn btn-facebook btn-block" href="https://www.facebook.com/entrepotducongo"><span class="fa fa-facebook"></span> | Facebook</a>
-                    <a class="btn btn-google-plus btn-block" href="https://plus.google.com/101729553693648953944/"><span class="fa fa-google-plus"></span> | Google Plus</a>
+                    <a class="btn btn-facebook btn-block" href="https://www.facebook.com/entrepotducongo"><span class="fa fa-facebook"></span> Facebook</a>
+                    <a class="btn btn-google-plus btn-block" href="https://goo.gl/maps/EdJSYU8rKz4C4U4P9"><span class="fa fa-google"></span> Google Maps</a>
                     <a class="btn btn-success btn-block" href="http://www.tripadvisor.com/Restaurant_Review-g188636-d1018023-Reviews-L_entrepot_du_congo-Antwerp_Antwerp_Province.html"><span class="fa fa-tripadvisor"></span> TripAdvisor</a>
 
 
