@@ -22,8 +22,10 @@
                     </p>
 
                     {% case page.lang %}
-                    {% when 'nl' %}<table class="table"><tr><td>alle dagen</td><td>8:30 tot 0:00</td></tr><tr><td>keuken</td><td>8:30 tot 21:30</td></tr></table>
-                    {% else %}<table class="table"><tr><td>Every day</td><td>8:30 till 0:00</td></tr><tr><td>Kitchen</td><td>8:30 till 21:30</td></tr></table>
+                    {% when 'nl' %}<table class="table"><tr><td>alle dagen</td><td style="text-decoration: line-through;">8:30 tot 0:00</td></tr><tr><td>keuken</td><td style="text-decoration: line-through;">8:30 tot 21:30</td></tr></table>
+                    Tijdelijk gesloten, volgens de COVID19 richtlijnen.
+                    {% else %}<table class="table"><tr><td>Every day</td><td style="text-decoration: line-through;">8:30 till 0:00</td></tr><tr><td>Kitchen</td><td style="text-decoration: line-through;">8:30 till 21:30</td></tr></table>
+                    Temprorarily closed following COVID19 guidelines.
                     {% endcase %}
 
                 </div>
