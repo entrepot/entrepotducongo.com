@@ -45,10 +45,9 @@ var url = '/menu.pdf';
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
 var pdfjsLib = window['pdfjs-dist/build/pdf'];
-const pdfjs = await import('pdfjs-dist/build/pdf');
-const pdfjsWorker = await import('pdfjs-dist/build/pdf.worker.entry');
 
-pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105//pdf.worker.js';
+
 // Asynchronous download of PDF
 var loadingTask = pdfjsLib.getDocument(url);
 loadingTask.promise.then(function(pdf) {
