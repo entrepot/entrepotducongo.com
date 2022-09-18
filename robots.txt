@@ -1,6 +1,4 @@
----
----
 User-agent: *
 Disallow: /menu.pdf
 
-Sitemap: {{ site.production_url }}/sitemap.xml
+Sitemap: https://entrepotducongo.com/sitemap.xml
