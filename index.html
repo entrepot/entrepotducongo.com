@@ -1,13 +1,84 @@
----
-layout: home
-title: l'Entrep&#244;t du Congo
-tagline:
----
-{% include JB/setup %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>l'Entrep&#244;t du Congo</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js" integrity="sha512-tqaIiFJopq4lTBmFlWF0MNzzTpDsHyug8tJaaY0VkcH5AR2ANMJlcD+3fIL+RQ4JU3K6edt9OoySKfCCyKgkng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        address {
+            font-style: normal;
+            font-size: 180%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #menu {
+            height: calc(90% - 20px);
+            width: 100%;
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46868217-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-<!--l'Entrep&#244;t du Congo is a brasserie located in the South of Antwerp.
+        gtag('config', 'UA-46868217-1');
+    </script>
 
-<h2><a name="foodAndDrinks"></a>Food + Drinks</h2>
+</head>
+<body>
 
-You can find our <a href="/menu.pdf">menu</a> here. Take away is possible for Coffee and sandwiches.-->
+<canvas id="menu"></canvas>
 
+<address>
+    <img src="/assets/themes/entrepot/images/entrepot-tiny.png" alt="l'Entrep&#244;t du Congo" />
+    l'Entrep&#244;t du Congo | 
+    <a href="https://g.page/entrepotducongo?share">Vlaamsekaai 42, 2000 Antwerpen</a> | 
+    <a href="tel:+32 497 427 956">+32 497 427 956</a> | 
+    <a href="mailto:info@entrepotducongo.com">info@entrepotducongo.com</a>
+</address>
+
+<script>
+// If absolute URL from the remote server is provided, configure the CORS
+// header on that server.
+var url = '/menu.pdf';
+
+// Loaded via <script> tag, create shortcut to access PDF.js exports.
+var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+// Asynchronous download of PDF
+var loadingTask = pdfjsLib.getDocument(url);
+loadingTask.promise.then(function(pdf) {
+  
+  
+  // Fetch the first page
+  var pageNumber = 1;
+  pdf.getPage(pageNumber).then(function(page) {
+    
+    var scale = 1.5;
+    var viewport = page.getViewport({scale: scale});
+
+    // Prepare canvas using PDF page dimensions
+    var canvas = document.getElementById('menu');
+    var context = canvas.getContext('2d');
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    // Render PDF page into canvas context
+    var renderContext = {
+      canvasContext: context,
+      viewport: viewport
+    };
+    var renderTask = page.render(renderContext);
+    renderTask.promise.then(function () {
+      console.log('Page rendered');
+    });
+  });
+}, function (reason) {
+  // PDF loading error
+  console.error(reason);
+});
+
+</script>
+</body>
+</html>
