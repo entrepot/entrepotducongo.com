@@ -7,7 +7,14 @@
 </head>
 <body>
 
-<canvas id="menu" width="100%" height="100%"></canvas>
+<canvas id="menu" width="100%" height="90%"></canvas>
+
+<address>
+    l'Entrep&#244;t du Congo | 
+    <a href="https://g.page/entrepotducongo?share">Vlaamsekaai 42, 2000 Antwerpen</a> | 
+    <a href="tel:+32 497 427 956">+32 497 427 956</a> | 
+    <a href="mailto:info@entrepotducongo.com">info@entrepotducongo.com</a>
+</address>
 
 <script>
 // If absolute URL from the remote server is provided, configure the CORS
@@ -16,9 +23,6 @@ var url = '/menu.pdf';
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
 var pdfjsLib = window['pdfjs-dist/build/pdf'];
-
-// The workerSrc property shall be specified.
-//pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
 
 // Asynchronous download of PDF
 var loadingTask = pdfjsLib.getDocument(url);
