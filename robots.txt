@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /menu.pdf
+Disallow: /menu1.pdf
 
 Sitemap: https://entrepotducongo.com/sitemap.xml
  
