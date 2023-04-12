@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /menu.pdf
 
 Sitemap: https://entrepotducongo.com/sitemap.xml
+ 
