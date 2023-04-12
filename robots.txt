@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /menu.pdf
+Disallow: /Entrepot menu definitief.pdf
 
 Sitemap: https://entrepotducongo.com/sitemap.xml
